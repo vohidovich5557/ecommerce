@@ -3,13 +3,13 @@ import { useSelector } from "react-redux";
 
 
 
-export const TotalCard = ({ price, totalPrice }) => {
-    const { product } = useSelector((state) => state.cartProduct);
+export const TotalCard = () => {
+    const { totalPrice } = useSelector((state) => state.cartProduct);
     return (
         <>
             <div className="flex items-center justify-between">
                 <h2>SubTotal:</h2>
-                <p></p>
+                <p>${Math.ceil(totalPrice ? totalPrice : 0)}</p>
             </div>
             <div className="flex items-center justify-between">
                 <h2>Discount:</h2>

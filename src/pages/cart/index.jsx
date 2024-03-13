@@ -6,11 +6,11 @@ import { TotalCard } from "../../components/cards/total-card";
 
 
 export const Cart = () => {
-    const {product} = useSelector((state)=> state.cartProduct)
+    const {product, count} = useSelector((state)=> state.cartProduct)
     return (
         <>
         <div className="container  flex flex-col mt-[30px] justify-start pl-[120px]">
-        <h2 className="text-black text-2xl font-extrabold mb-[20px]">MyCart(<span>{product.length}</span>)</h2>
+        <h2 className="text-black text-2xl font-extrabold mb-[20px]">MyCart(<span>{count}</span>)</h2>
         <div className="flex items-start gap-[20px]">
        <div>
        {product?.map((item) => (

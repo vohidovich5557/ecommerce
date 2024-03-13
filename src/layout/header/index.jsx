@@ -7,10 +7,12 @@ import { Messages } from "../../assets/icons/messages";
 import { Like } from "../../assets/icons/like";
 import { MyCart } from "../../assets/icons/mycart";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 
 export const Header = () => {
+    const {count} = useSelector((state)=> state.cartProduct);
     return (
         <>
             <div className="container flex items-center justify-between px-[50px] mt-[20px]">
@@ -42,7 +44,7 @@ export const Header = () => {
                     <Link to="/cart">
                         <div className="flex flex-col items-center">
                             <MyCart className="w-[20px] h-[19px]" />
-                            <p className="text-gray-500 font-normal">My cart</p>
+                            <p className="text-gray-500 font-normal">My cart <span>{count}</span></p>
                         </div>
                     </Link>
                 </div>
